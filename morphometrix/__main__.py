@@ -336,7 +336,7 @@ class MainWindow(QMainWindow):
         if ok:
             self.lea.setText(str(text))
             self.angleNames.append(self.lea.text())
-            QApplication.setOverrideCursor(QtCore.Qt.CrossCursor)  #change cursor
+            QApplication.setOverrideCursor(QtCore.Qt.CursorShape.CrossCursor)  #change cursor
             self.bezier.setEnabled(False)
             self.iw.measuring_angle = True
             self.iw._lastpos = None
@@ -354,7 +354,7 @@ class MainWindow(QMainWindow):
         if ok:
             self.lea.setText(str(text))
             self.areaNames.append(self.lea.text())
-            QApplication.setOverrideCursor(QtCore.Qt.CrossCursor)  #change cursor
+            QApplication.setOverrideCursor(QtCore.Qt.CursorShape.CrossCursor)  #change cursor
             self.bezier.setEnabled(False)
             self.iw.line_count = 0
             self.iw.measuring_area = True
