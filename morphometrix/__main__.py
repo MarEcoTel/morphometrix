@@ -849,7 +849,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
         self._thispos = QtCore.QPointF(data)  # update current position
 
         if self.measuring_length:
-            self.L.update(data.x(), data.y())  # update total length
+            print(self.line_count); self.L.update(data.x(), data.y())  # update total length
             self.line_count += 1
 
         elif self.measuring_area:
