@@ -874,7 +874,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
                 self.parent().statusbar.showMessage('Polygon area measurement completed')
                 self.parent().areaButton.setChecked(False)
                 self.parent().bezier.setEnabled(True) #make bezier fit available again
-                QApplication.setOverrideCursor(QtCore.Qt.ArrowCursor)  #change cursor
+                QApplication.setOverrideCursor(QtCore.QCursor.shape('ArrowCursor'))  #change cursor
             else:
                 self.A.update(data.x(),data.y()) #update with click point
 
