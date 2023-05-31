@@ -853,6 +853,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
             self.line_count += 1
 
         elif self.measuring_area:
+		print(self.line_count)#############################################################################################################################################################################################################################
             self.line_count += 1
             intersect = False
             if self.line_count > 2: #cant make polygon w/ two lines
