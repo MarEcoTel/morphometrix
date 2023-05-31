@@ -978,7 +978,7 @@ class posData():
         self.Tu = np.hypot(self.dx,self.dy) + np.finfo(float).eps
 
     def checkIntersect(self, xn, yn):
-        vx = np.array([self.x[-1],xn])
+        print(self.x);print(self.y);print(xn);print(yn);vx = np.array([self.x[-1],xn])
         vy = np.array([self.y[-1],yn])
         dvx = np.diff(vx)
         dvy = np.diff(vy)
