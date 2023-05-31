@@ -572,7 +572,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
                     self.scene.area_ellipseItem = QGraphicsEllipseItem(0, 0, 10, 10)
                     self.scene.area_ellipseItem.setPos(p.x() - 10 / 2, p.y() - 10 / 2)
                     self.scene.area_ellipseItem.setBrush(
-                    QtGui.QBrush(QtCore.QColor.blue())) #, style=QtCore.Qt.BrushStyle.SolidPattern))
+                    QtGui.QBrush(QtGui.QColor.blue())) #, style=QtCore.Qt.BrushStyle.SolidPattern))
                     self.scene.area_ellipseItem.setFlag(
                     QGraphicsItem.GraphicsItemFlag.ItemIgnoresTransformations,
                     False)  #size stays small, but doesnt translate if set to false
@@ -874,7 +874,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
                 self.parent().statusbar.showMessage('Polygon area measurement completed')
                 self.parent().areaButton.setChecked(False)
                 self.parent().bezier.setEnabled(True) #make bezier fit available again
-                QApplication.setOverrideCursor(QtCore.QCursor.shape('ArrowCursor'))  #change cursor
+                QApplication.setOverrideCursor(QtCore.Qt.CursorShape.ArrowCursor)  #change cursor
             else:
                 self.A.update(data.x(),data.y()) #update with click point
 
