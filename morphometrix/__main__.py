@@ -988,8 +988,8 @@ class posData():
         yi = None
         count = None
         for k,(x,y,dx,dy,Tu) in enumerate(zip(self.x[:-1], self.y[:-1], self.dx, self.dy, self.Tu)):
-            A = np.matrix( [[dx/Tu, -dvx/Tv],
-                            [dy/Tu, -dvy/Tv]], dtype = 'float' )
+            A = np.matrix( [[dx/Tu, float(-dvx/Tv)],
+                            [dy/Tu, float(-dvy/Tv)]], dtype = 'float' )
             b = np.array( [vx[0] - x, vy[0] - y] )
             try:
                 t = np.linalg.solve(A, b)
