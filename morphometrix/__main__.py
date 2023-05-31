@@ -853,7 +853,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
             self.line_count += 1
 
         elif self.measuring_area:
-            self.line_count += 1
+            #self.line_count += 1
             intersect = False; print(self.line_count)
             if self.line_count > 2: #cant make polygon w/ two lines
                 intersect, xi, yi, k = self.A.checkIntersect(data.x(),data.y())
@@ -876,7 +876,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
                 self.parent().bezier.setEnabled(True) #make bezier fit available again
                 QApplication.setOverrideCursor(QtCore.Qt.ArrowCursor)  #change cursor
             else:
-                self.A.update(data.x(),data.y()) #update with click point
+                self.A.update(data.x(),data.y()); self.line_count +=1 #update with click point
 
         #https://stackoverflow.com/questions/30898846/qgraphicsview-items-not-being-placed-where-they-should-be
         if self.measuring_widths:  #measure widths, snap to spines
