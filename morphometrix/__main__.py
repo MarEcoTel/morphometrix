@@ -876,7 +876,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
                 QApplication.setOverrideCursor(QtCore.Qt.ArrowCursor)  #change cursor
             else:
                 self.A.update(data.x(),data.y()) #update with click point
-            	self.line_count += 1
+		self.line_count += 1
 
         #https://stackoverflow.com/questions/30898846/qgraphicsview-items-not-being-placed-where-they-should-be
         if self.measuring_widths:  #measure widths, snap to spines
