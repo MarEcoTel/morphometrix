@@ -854,7 +854,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
 
         elif self.measuring_area:
             self.line_count += 1
-            intersect = False
+            intersect = False; print(self.line_count)
             if self.line_count > 2: #cant make polygon w/ two lines
                 intersect, xi, yi, k = self.A.checkIntersect(data.x(),data.y())
                 self.parent().areaButton.setEnabled(True)
