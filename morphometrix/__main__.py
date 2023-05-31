@@ -558,7 +558,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
                 self.scene.removeItem(self.scene.testline)
                 self.scene.testline = False
 
-            if self.measuring_area and self.line_count > 3:
+            if self.measuring_area and self.line_count > 2:
                 intersect, xi, yi, k = self.A.checkIntersect(data.x(),data.y())
                 if self.scene.area_ellipseItem: #remove existing intersect
                     self.scene.removeItem(self.scene.area_ellipseItem)
@@ -691,7 +691,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
 
     def polyClose(self): #make into hot key not button
         if self.measuring_area:
-            if self.line_count > 3: #cant make polygon w/ two lines
+            if self.line_count > 2: #cant make polygon w/ two lines
                 self.measuring_area = False
                 A = self.A.calcArea()
                 self.areaValues = np.append(self.areaValues, A) #add area values
@@ -855,7 +855,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
         elif self.measuring_area:
             self.line_count += 1
             intersect = False
-            if self.line_count > 3: #cant make polygon w/ two lines
+            if self.line_count > 2: #cant make polygon w/ two lines
                 intersect, xi, yi, k = self.A.checkIntersect(data.x(),data.y())
                 self.parent().areaButton.setEnabled(True)
             if intersect:
