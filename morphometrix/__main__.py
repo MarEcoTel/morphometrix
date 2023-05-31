@@ -572,7 +572,7 @@ class imwin(QGraphicsView):  #Subclass QLabel for interaction w/ QPixmap
                     self.scene.area_ellipseItem = QGraphicsEllipseItem(0, 0, 10, 10)
                     self.scene.area_ellipseItem.setPos(p.x() - 10 / 2, p.y() - 10 / 2)
                     self.scene.area_ellipseItem.setBrush(
-                    QtGui.QBrush(QtCore.QtColor('blue'))) #, style=QtCore.Qt.BrushStyle.SolidPattern))
+                    QtGui.QBrush(QtCore.QColor('blue'))) #, style=QtCore.Qt.BrushStyle.SolidPattern))
                     self.scene.area_ellipseItem.setFlag(
                     QGraphicsItem.GraphicsItemFlag.ItemIgnoresTransformations,
                     False)  #size stays small, but doesnt translate if set to false
